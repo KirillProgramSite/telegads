@@ -1,0 +1,18 @@
+{
+    "rules": {
+        "selector-class-pattern": [
+            "^[a-z0-9]+(?:__[a-z0-9]+)*(?:--[a-z0-9]+)*(?:_[a-z0-9]+)*$",
+            {
+                "resolveNestedSelectors": true,
+                "message": "Expected class selector to be BEM-like (e.g., block__element--modifier)."
+            }
+        ]
+    },
+    "extends": [
+        "stylelint-config-standard",
+        "stylelint-config-recommended"
+    ],
+    "plugins": [
+        "stylelint-scss"
+    ]
+}
