@@ -19,35 +19,132 @@ $p__first: 14px;
 $p__second: 17px;
 $p__third: 18px;
 
+//Font-Family
+$font__project: HelveticaNeueCyr, sans-serif;
+
 //Mixin
 
-@mixin wrapper($jc, $al, $dir){
+@mixin wrapper($jc, $al) {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: $dir;
     justify-content: $jc;
     align-items: $al;
 }
 
 
-h1{
-    font-family: HelveticaNeueCyr, sans-serif;
+h1 {
+    font-family: $font__project;
     font-size: $title__h1;
     font-weight: bold;
 }
 
-h2{
-    font-family: HelveticaNeueCyr, sans-serif;
+h2 {
+    font-family: $font__project;
     font-size: $title__h2;
     font-weight: bold;
 }
 
-h3{
-    font-family: HelveticaNeueCyr, sans-serif;
+h3 {
+    font-family: $font__project;
     font-size: $title__h3;
-    font-weight:400;
+    font-weight: 400;
 }
 
-.header_wrapper{
-    @include wrapper(space-between, center)
+
+.container {
+    width: 70%;
+    margin: 0 auto;
+}
+
+header.header {
+    margin-top: 43px;
+    margin-left: 80px;
+    margin-right: 80px;
+
+
+    .wrapper {
+        @include wrapper(space-between, center);
+    }
+}
+
+.header__logo {
+    @include wrapper(flex-start, flex-start);
+
+    img {
+        margin-right: 76px;
+    }
+}
+
+.header__lang select {
+    font-family: $font__project;
+    font-weight: 400;
+    font-size: $p__second;
+    color: $color__main;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+
+.header__menu {
+    ul {
+        @include wrapper(flex-start, center);
+
+        li {
+            padding-right: 53px;
+
+            a {
+                font-family: $font__project;
+                font-size: $p__second;
+                color: $color__second;
+                font-weight: 500;
+                text-decoration: none;
+            }
+
+            a.active{
+                position: relative;
+                color:$color__main;
+                &::after{
+                    content: "";
+                    height: 6px;
+                    width: 116px;
+                    background-color: $color__main;
+                    position: absolute;
+                    top: -67px;
+                    left: -25%;
+                    
+                }
+            }
+
+            &:last-child {
+                padding-right: 0px;
+            }
+        }
+    }
+}
+
+.header__btn {
+    @include wrapper(space-between, center);
+    background-color: $color__main;
+    border: none;
+
+    cursor: pointer;
+    padding: 23px 43px 16px 44px;
+    border-radius: 100px;
+    text-transform: uppercase;
+
+    p {
+        text-transform: uppercase;
+        color: #fff;
+        font-family: $font__project;
+        font-weight: 500;
+        margin-right: 12px;
+    }
+}
+
+@media(max-width: 768px) {
+    header.header {
+        margin-left: 35px;
+        margin-right: 35px;
+    }
 }

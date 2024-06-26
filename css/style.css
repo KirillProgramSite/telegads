@@ -1,9 +1,6 @@
 @import url("reset-css");
 @import url("../public/fonts/helvetica/stylesheet.css");
 @import url("https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic");
-
-
-
 h1 {
   font-family: HelveticaNeueCyr, sans-serif;
   font-size: 85px;
@@ -22,8 +19,99 @@ h3 {
   font-weight: 400;
 }
 
-.header_wrapper {
+.container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+header.header {
+  margin-top: 43px;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+header.header .wrapper {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+}
+
+.header__logo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.header__logo img {
+  margin-right: 76px;
+}
+
+.header__lang select {
+  font-family: HelveticaNeueCyr, sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  color: #7044CC;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.header__menu ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.header__menu ul li {
+  padding-right: 53px;
+}
+.header__menu ul li a {
+  font-family: HelveticaNeueCyr, sans-serif;
+  font-size: 17px;
+  color: #000000;
+  font-weight: 500;
+  text-decoration: none;
+}
+.header__menu ul li a.active {
+  position: relative;
+  color: #7044CC;
+}
+.header__menu ul li a.active::after {
+  content: "";
+  height: 6px;
+  width: 116px;
+  background-color: #7044CC;
+  position: absolute;
+  top: -67px;
+  left: -25%;
+}
+.header__menu ul li:last-child {
+  padding-right: 0px;
+}
+
+.header__btn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #7044CC;
+  border: none;
+  cursor: pointer;
+  padding: 23px 43px 16px 44px;
+  border-radius: 100px;
+  text-transform: uppercase;
+}
+.header__btn p {
+  text-transform: uppercase;
+  color: #fff;
+  font-family: HelveticaNeueCyr, sans-serif;
+  font-weight: 500;
+  margin-right: 12px;
+}
+
+@media (max-width: 768px) {
+  header.header {
+    margin-left: 35px;
+    margin-right: 35px;
+  }
 }
